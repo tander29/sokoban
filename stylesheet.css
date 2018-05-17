@@ -10,9 +10,11 @@ body{
     width: 100%;
     height: 100%;
     background-color: black;
+    color:white;
 }
 main {
-    width:55%;
+    width:80%;
+    height: 80%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -26,19 +28,18 @@ main {
 }
 
 .cell {
-    width: 20px; 
-    height: 18px;
     box-sizing: border-box;
     margin: 1px;
     display: flex;
     justify-content: center;
-    align-items: center;  
+    align-items: center; 
+    align-content: center; 
 }
 
 .wall {
     background-color: black;
     border: 2pt darkblue solid;
-    border-radius: 10%;
+    border-radius: 20%;
 }
 
 
@@ -46,21 +47,35 @@ main {
 #gamePiece {
     
     background-image: url("Pac_Man.svg.png");
-    width: 13px;
-    height: 14px;
+    width: 80%;
+    height: 80%;
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
     
 }
 .O {
-    background-color:darkred;
+    height: 80%;
+    width: 80%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("Pacman-red-blinky.sh.png");
+    background-position: center;
 }
 .B {
-    background-color:green;
-    border-radius: 50%;
+    height: 80%;
+    width: 80%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("Pacman-cherries.sh.png");
+    background-position: center;
 }
 
 .B.O {
-    background-color: blue;
-    border-radius: 50%;
+    height: 80%;
+    width: 80%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("blueghost.png");
+    background-position: center;
 }

@@ -1,33 +1,35 @@
-// const map = [
-//     "  WWWWW ",
-//     "WWW   W ",
-//     "WOSB  W ",
-//     "WWW BOW ",
-//     "WOWWB W ",
-//     "W W O WW",
-//     "WB XBBOW",
-//     "W   O  W",
-//     "WWWWWWWW"
-//   ];
+const map = [
+    "  WWWWW ",
+    "WWW   W ",
+    "WOSB  W ",
+    "WWW BOW ",
+    "WOWWB W ",
+    "W W O WW",
+    "WB XBBOW",
+    "W   O  W",
+    "WWWWWWWW"
+  ];
 
-  const map = [
-    "    WWWWW          ",
-    "    W   W          ",
-    "    WB  W          ",
-    "  WWW  BWW         ",
-    "  W  B B W         ",
-    "WWW W WW W   WWWWWW",
-    "W   W WW WWWWW  OOW",
-    "W B  B          OOW",
-    "WWWWW WWW WSWW  OOW",
-    "    W     WWWWWWWWW",
-    "    WWWWWWW        "
- ]
+//   const map = [
+//     "    WWWWW          ",
+//     "    W   W          ",
+//     "    WB  W          ",
+//     "  WWW  BWW         ",
+//     "  W  B B W         ",
+//     "WWW W WW W   WWWWWW",
+//     "W   W WW WWWWW  OOW",
+//     "W B  B          OOW",
+//     "WWWWW WWW WSWW  OOW",
+//     "    W     WWWWWWWWW",
+//     "    WWWWWWW        "
+//  ]
 
 const main = document.getElementById("main");
 let currentColumn = 1;
 let cellNumber = "";
 let rowNumber = "";
+let boardHeight = map.length
+let boardWidth = map[0].length
 //gamePiece is the active character the player directly controls
 let gamePiece = document.createElement("div");
 let pacmanDirection = "rotate(0)"
@@ -51,11 +53,14 @@ function createCell(row, displayRow) {
     for (let cell of row) {
         //create Div's for each cell, append into rows
         let displayCell = document.createElement("div");
+        //sizes the cell's based on screen size
+        displayCell.style.height = 50/boardHeight + "vh"
+        displayCell.style.width = 50/boardWidth + "vw"
+        //document.getElementById("gamePiece").style.transform = pacmanDirection;
         displayCell.classList.add("cell");
         displayRow.appendChild(displayCell);
         displayCell.dataset.cellX = displayRow.childElementCount;
         displayCell.dataset.cellY = displayRow.dataset.cellY
-
         assignCellType(cell, displayCell);
     }
 }
@@ -154,7 +159,7 @@ function win (){
 
     if(boxCount.length === boxOnSpotCount.length){
      alert("You win")
-     console.log("you win")
+     
  }
 }
 
@@ -164,4 +169,5 @@ document.addEventListener('keyup',win)
 
 createMaze()
 document.addEventListener('keydown', checkMove)
+document.addEventListener('click', )
 //document.addEventListener('keyup', checkWin)
