@@ -57,10 +57,10 @@ main {
 }
 .B {
     background-color:green;
-    border-radius: 50%
+    border-radius: 50%;
 }
 
 .B.O {
     background-color: blue;
-    border-radius: 50%
+    border-radius: 50%;
 }
